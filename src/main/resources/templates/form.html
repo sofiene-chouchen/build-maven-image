@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Produit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+<div class="container">
+
+    <form>
+        <div class="form-group">
+            <label>Name :</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" name="name">
+        </div>
+        <div class="form-group">
+            <label>Prix</label>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   name="prix">
+        </div>
+        <div class="form-group">
+            <label>quantite</label>
+            <input type="number" class="form-control" aria-describedby="emailHelp"
+                   placeholder="Enter email" name="quantite">
+        </div>
+        <div class="form-group">
+            <label>Categorie</label>
+            <select name="categorie">
+                <option th:each="c:${categories}" th:text="${c.nom}" th:value="${c.id}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

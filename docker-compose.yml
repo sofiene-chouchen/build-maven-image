@@ -1,0 +1,14 @@
+version: "3"
+services:
+  backend:
+    image: sofiene/maven-project
+    ports:
+      - "8081:8080"
+  db:
+   image: mysql:5.7
+   environment:
+     - MYSQL_DATABASE=gestionCatalogue
+     - MYSQL_USER=root
+     - MYSQL_ROOT_PASSWORD=
+   ports:
+    - "3306:3306"
